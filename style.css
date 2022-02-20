@@ -16,13 +16,31 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   min-height: 100vh;
+  font-size: 3rem;
+}
+
+select {
+  font-size: 3rem;
+  font-family: Futura, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+option {
+  font-size: 2rem;
+}
+
+.controls {
+  margin-bottom: 2rem;
+  font-family: Futura, Arial, Helvetica, sans-serif;
+  font-weight: 700;
 }
 
 canvas {
   height: 60rem;
   width: 60rem;
-  border: 0.5rem solid black;
+  /* border: 0.5rem solid black; */
 }
 
 /* .canvas {

@@ -1,3 +1,9 @@
+let playerState = "run";
+const dropdown = document.getElementById("animations");
+dropdown.addEventListener("change", function (e) {
+  playerState = e.target.value;
+});
+
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 // console.log(ctx);
@@ -76,9 +82,10 @@ function animate() {
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
   let position =
-    Math.floor(gameFrame / staggerFrames) % spriteAnimations["idle"].loc.length;
+    Math.floor(gameFrame / staggerFrames) %
+    spriteAnimations[playerState].loc.length;
   let frameX = spriteWidth * position;
-  let frameY = spriteAnimations["idle"].loc[position].y;
+  let frameY = spriteAnimations[playerState].loc[position].y;
 
   ctx.drawImage(
     playerImage,
