@@ -19,8 +19,14 @@ body {
   min-height: 100vh;
 }
 
-.canvas {
+canvas {
   height: 60rem;
   width: 60rem;
   border: 0.5rem solid black;
 }
+
+/* .canvas {
+  height: 60rem;
+  width: 60rem;
+  border: 0.5rem solid black;
+} */
