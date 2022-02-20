@@ -13,6 +13,23 @@ let frameX = 0;
 let frameY = 0;
 let gameFrame = 0;
 const staggerFrames = 5;
+const spriteAnimations = [];
+const animationStates = [
+  {
+    name: "idle",
+    frames: 7,
+  },
+  {
+    name: "jump",
+    frames: 7,
+  },
+  {
+    name: "jump",
+    frames: 7,
+  },
+];
+
+animationStates.forEach((state) => {});
 
 function animate() {
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
