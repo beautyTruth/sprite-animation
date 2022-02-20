@@ -16,11 +16,13 @@ const staggerFrames = 5;
 
 function animate() {
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-  // ctx.fillRect(100, 50, 100, 100);
-  // ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
+
+  let position = Math.floor(gameFrame / staggerFrames) % 6;
+  frameX = spriteWidth * position;
+
   ctx.drawImage(
     playerImage,
-    frameX * spriteWidth,
+    frameX,
     frameY * spriteHeight,
     spriteWidth,
     spriteHeight,
@@ -29,12 +31,28 @@ function animate() {
     spriteWidth,
     spriteHeight
   );
-  if (gameFrame % staggerFrames == 0) {
-    if (frameX < 6) frameX++;
-    else frameX = 0;
-  }
+
   gameFrame++;
   requestAnimationFrame(animate);
 }
 
 animate();
+
+// -=-=-=-=-=-=-=-=-=-=-=- unrefactored code boneyard -=-=-=-=-=-=-=-=-=-=-=-=
+
+/*
+
+--notes of how to draw and place an image or rect 
+
+  // ctx.fillRect(100, 50, 100, 100);
+  // ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
+
+--from the animate function before we learned how to change the animation rows and columns dynamically 
+
+  // if (gameFrame % staggerFrames == 0) {
+  //   if (frameX < 6) frameX++;
+  //   else frameX = 0;
+  // }
+
+
+*/
